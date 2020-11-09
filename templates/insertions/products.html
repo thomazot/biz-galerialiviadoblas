@@ -1,0 +1,21 @@
+<h2 class="products__header">
+    <span class="products__image product-image">@foto(485x485)</span>
+</h2>
+<div class="products__main">
+    <div class="products__content">
+        <a href="@url" title="@nome(60)" class="products__link"></a>
+        <span class="products__name">@nome</span>
+
+        @if(is_disponivel)
+            @preco
+            @preco(parcelado)
+        @else(is_disponivel)
+            <div class="esgotado">Produto Esgotado</div>
+        @endif(is_disponivel)
+
+        @bt(listadesejos "<svg class='ico z-wish'><use xlink:href='#z-wish' /></svg>")
+    </div>
+</div>
+
+
+<h2 class="products__header"><span class="products__image product-image">@foto(485x485)</span></h2><div class="products__main"><div class="products__content"><a href="@url" title="@nome(60)" class="products__link"></a><span class="products__name">@nome</span> @if(is_disponivel) @preco @preco(parcelado) @else(is_disponivel) <div class="esgotado">Produto Esgotado</div> @endif(is_disponivel) @bt(listadesejos "<svg class='ico z-wish'><use xlink:href='#z-wish' /></svg>") </div></div>

@@ -1,4 +1,23 @@
 .header
+    position: static
+
     &-container
-        position: sticky
-        top: 0
+        --color-border: #f6f6f5
+
+        &
+            position: sticky
+            top: 0
+            margin-top: -16px
+            box-shadow: none
+            transition-delay: .8s linear
+            transitiona: all .2s ease
+
+        .cms-home &
+            background: none
+
+        body:not(.cms-home) &
+            border-bottom: solid 1px var(--color-border)
+
+        .cms-home.scrolling &
+            border-bottom: solid 1px var(--color-border)
+            background: #fff

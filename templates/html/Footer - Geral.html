@@ -1,0 +1,33 @@
+<div class="footer__row">
+    <div class="footer__box">
+        {{widget type="interface/widget_logo" template="interface/widgets/logo.phtml" identificador="logofooter" imagem="wysiwyg/logo/logo.svg" imagem_mobile="wysiwyg/logo/logo.svg" alt_imagem="Livia Doblas Galeria de Arte" tag_html="div" tag_html_home="div"}}
+        {{widget type="interface/widget_social" template="interface/widgets/social.phtml" identificador="socials" redes="all"}}
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Sobre</h3>
+        <div class="footer__content">
+            {{block type="menubuilder/output" identifier="about"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Categorias</h3>
+        <div class="footer__content">
+            {{block type="menubuilder/output" identifier="categories"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Conta</h3>
+        <div class="footer__content">
+            {{block type="menubuilder/output" identifier="account"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Contato</h3>
+        <div class="footer__content">
+            {{block type="menubuilder/output" identifier="contact"}}
+        </div>
+    </div>
+</div>
+<div class="footer__copyright">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+</div>

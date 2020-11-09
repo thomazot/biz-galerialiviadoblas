@@ -1,0 +1,41 @@
+.footer
+    --background: #a9acac
+
+    &
+        @media media-max-lg
+            text-align: center
+
+            .flex--a-center
+                justify-content: center
+
+            .logo
+                svg
+                    margin: 0 auto
+
+    &-container
+        margin-top: 60px
+
+    &__row
+        @media media-min-lg
+            display: flex
+            justify-content: space-between
+            margin: 0 -16px
+
+    &__title
+        margin-bottom: 36px
+        color: var(--background)
+        font-weight: regular
+        font-size: 20px
+
+    &__box
+        margin-bottom: 36px
+
+        @media media-min-lg
+            padding: 0 16px 36px
+
+    &__copyright
+        padding: 36px 0
+        color: var(--background)
+        text-align: center
+        font-weight: regular
+        font-size: 12px

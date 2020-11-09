@@ -1,0 +1,21 @@
+.owl
+    &-next, &-prev
+        background: none
+        box-shadow: none
+        color: var(--primary)
+
+        &:before
+            background: none
+            color: currentColor
+            font-size: 10px
+
+    &-page
+        span
+            width: 8px
+            height: 8px
+            background: none
+            box-shadow: 0 0 0 1px var(--background)
+            opacity: 1
+
+        &.active span
+            background: var(--background)

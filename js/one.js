@@ -814,24 +814,54 @@ function default_carrossel_produtos() {
                 })
             } else {
                 // se for em uma listagem normal
+                const hasGrid =
+                    $j(el)
+                        .closest('.products')
+                        .attr('id')
+                        .indexOf('products--grid') !== -1
 
-                $j(el).owlCarousel({
-                    navigation: true,
-                    navigationText: ['?', '?'],
-                    items: 5,
-                    itemsCustom: [
-                        [0, 1],
-                        [568, 2],
-                        [768, 3],
-                        [1024, 4],
-                        [1270, 5],
-                    ],
-                    beforeMove: function () {
-                        if (typeof $j.fn.lazyload != 'undefined') {
-                            $j(el).find('img').lazyload()
-                        }
-                    },
-                })
+                const hasGridLeft =
+                    $j(el).closest('.products').attr('id').indexOf('-left') !==
+                    -1
+
+                if (hasGrid) {
+                    $j(el).closest('.products').addClass('products--grid')
+                    if (hasGridLeft)
+                        $j(el).closest('.products').addClass('products--left')
+                    else $j(el).closest('.products').addClass('products--right')
+                    $j(el).owlCarousel({
+                        navigation: true,
+                        navigationText: ['?', '?'],
+                        items: 5,
+                        itemsCustom: [
+                            [0, 1],
+                            [568, 2],
+                            [768, 3],
+                            [993, 5],
+                        ],
+                        beforeMove: function () {
+                            if (typeof $j.fn.lazyload != 'undefined') {
+                                $j(el).find('img').lazyload()
+                            }
+                        },
+                    })
+                } else {
+                    $j(el).owlCarousel({
+                        navigation: true,
+                        navigationText: ['?', '?'],
+                        items: 3,
+                        itemsCustom: [
+                            [0, 1],
+                            [568, 2],
+                            [768, 3],
+                        ],
+                        beforeMove: function () {
+                            if (typeof $j.fn.lazyload != 'undefined') {
+                                $j(el).find('img').lazyload()
+                            }
+                        },
+                    })
+                }
             }
         })
     }
@@ -1232,10 +1262,10 @@ $j.fn.neonTheme.custom = {
     fix_catalog_flexbox: true, // adiciona elementos para arrumar o flexbox do catálogo
     /* - Responsivo */
     m_categories: true, // ativa o responsivo do Menu de Categorias
-    m_search: true, // ativa o responsivo da Busca
+    m_search: false, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
-    m_myaccount: true, // ativa o responsivo da Minha Conta
-    m_mycart: true, // ativa o responsivo do Meu Carrinho
+    m_myaccount: false, // ativa o responsivo da Minha Conta
+    m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
@@ -1442,6 +1472,32 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+
+        // Button close Search
+
+        const search = $('.header .search__form')
+
+        if (search.length) {
+            const buttonHide = $(
+                '<button type="button" class="search__hide"><svg class="ico z-close"><use xlink:href="#z-close" /></svg></button>'
+            )
+            search.append(buttonHide)
+
+            buttonHide.click(function (event) {
+                event.preventDefault()
+                $(this).closest('.search').removeClass('search--show')
+            })
+
+            $('.header .search').click(function (event) {
+                if ($(event.target).hasClass('search')) {
+                    $(event.target).removeClass('search--show')
+                }
+            })
+
+            $('.search__button--show').click(function () {
+                $('.header .search').addClass('search--show')
+            })
+        }
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
