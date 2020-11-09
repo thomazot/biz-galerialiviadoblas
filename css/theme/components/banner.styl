@@ -1,2 +1,49 @@
 .cms-home .header-container + .banner
-    margin: 0
+    --background: #747579
+
+    &
+        margin-top: -97px
+
+    @media media-min-md
+        margin-top: -157px
+
+    img
+        width: 100%
+        object-fit: cover
+
+    .owl
+        &-pagination
+            position: absolute
+            bottom: 30px
+            left: 0
+            width: 100%
+
+#banner__regua-vantagens
+    &
+        background: linear-gradient(to right, var(--color-left) 60%, var(--color-right))
+
+    .owl
+        &-item
+            position: relative
+
+            + .owl-item:before
+                position: absolute
+                top: 50%
+                left: 0
+                width: 1px
+                height: 15px
+                background: var(--color-border)
+                content: ''
+                transform: translateY(-50%)
+
+    .banner
+        &__wrapper
+            margin: 0 auto
+            max-width: 100%
+            width: 520px !important
+
+        &__item
+            color: var(--color-text)
+            text-align: center
+            font-weight: medium
+            font-size: 13px

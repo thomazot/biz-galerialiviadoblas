@@ -1,0 +1,27 @@
+.mycart
+    .header &
+        margin-left: 16px
+
+        @media media-max-md
+            margin: 0
+
+    &__header
+        color: var(--color-text)
+
+        a
+            color: currentColor
+
+            @media media-max-md
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 50px
+                height: 50px
+
+        .ico
+            width: 19px
+            height: 21px
+            fill: currentColor
+
+    &__content
+        display: none !important
