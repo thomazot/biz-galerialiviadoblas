@@ -1,0 +1,250 @@
+.cart
+    --color: #4f4e50
+    --gray: #f4f4f4
+    --color-border: #e5e5e5
+
+    .qty-wrapper
+        input
+            border: solid 1px var(--color-border) !important
+            border-radius: 4px
+
+        .bt-box
+            right: -16px
+            box-shadow: none
+
+        .plus, .less
+            background: none
+            color: var(--secundary)
+
+            &:hover
+                background: @background
+                color: @color
+
+    .page-title
+        padding: 40px 0
+
+        @media media-min-sm
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+        h1
+            font-weight: regular
+            font-size: 20px
+
+        .btn-checkout
+            background: #fff
+            box-shadow: 0 0 0 1px var(--color)
+            color: var(--color)
+
+            @media media-max-sm
+                margin-top: 20px
+
+    .btn-checkout
+        max-width: 100%
+        width: 260px
+        height: 50px
+        border-radius: 50px
+        background: var(--color)
+        color: #fff
+        text-transform: uppercase
+        font-weight: regular
+        font-size: 13px
+
+        @media media-max-sm
+            width: 100%
+
+    .btn-continue
+        max-width: 100%
+        width: 240px
+        height: 50px
+        border: 0
+        border-radius: 50px
+        background: var(--gray)
+        box-shadow: none
+        color: var(--color)
+        text-transform: none
+        font-weight: regular
+        font-size: 13px
+
+        @media media-max-sm
+            margin-bottom: 20px
+            width: 100%
+
+    &__links
+        padding: 40px 0
+
+        @media media-max-sm
+            display: block
+
+    &__totals
+        .totals
+            border: solid 1px var(--color-border)
+            box-shadow: none
+
+            @media media-min-lg
+                padding-top: 0
+                padding-bottom: 0
+
+            &__table
+                td, th
+                    &, strong
+                        color: var(--primary)
+                        font-weight: regular
+                        font-size: 14px
+
+                @media media-min-lg
+                    display: flex
+                    padding: 0
+
+                    tbody, tfoot
+                        flex: 0 1 50%
+
+                    tr
+                        display: flex
+                        justify-content: space-between
+                        padding: 16px 0
+                        width: 100%
+
+                    tfoot
+                        border-left: solid 1px var(--color-border)
+
+        .title
+            display: none
+
+    &__boxes
+        @media media-min-lg
+            margin-bottom: 0
+
+.cart-table
+    padding: 10px 20px
+    border: solid 1px var(--color-border)
+
+    .btn-remove
+        &:before
+            display: none
+
+        .ico
+            width: 20px
+            height: 20px
+
+    header
+        border-bottom: solid 1px var(--color-border)
+        background: none
+        color: var(--primary)
+        font-weight: regular
+        font-size: 14px
+
+        @media media-min-lg
+            .th
+                order: 5
+
+            .cart-product-head
+                order: 0
+
+            .cart-qty-head
+                order: 1
+
+    main
+        border: 0
+
+        .cart-product-line
+            > div
+                order: 5
+
+                &.product-cart-image
+                    order: 0
+
+                &.product-cart-actions
+                    order: 1
+
+    footer
+        display: none
+
+.coupon, .shipping
+    margin: 20px 0
+    box-shadow: none
+
+.shipping
+    @media media-min-lg
+        display: flex
+        flex-wrap: wrap
+        padding-left: 0
+
+    .ico
+        margin-right: 10px
+        width: 31px
+        height: 25px
+        fill: var(--secundary)
+
+    .title
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: medium
+        font-size: 14px
+
+        @media media-min-lg
+            margin-right: 35px
+            margin-bottom: 0 !important
+
+    &__postcode
+        label
+            display: none
+
+        .input-text
+            border: 0 !important
+            box-shadow: none !important
+
+    &__action
+        .btn
+            background: none
+            box-shadow: none
+            color: var(--primary)
+            text-transform: none
+            font-size: 14px
+
+    &__form
+        border: solid 1px var(--color-border)
+
+        @media media-min-lg
+            flex: 0 1 215px
+            margin-bottom: 0
+
+.coupon
+    @media media-min-lg
+        display: flex
+        align-items: center
+        padding-right: 0
+
+    .title
+        padding-top: 5px
+        text-transform: none !important
+        font-weight: regular !important
+        font-size: 13px !important
+
+        @media media-min-lg
+            flex: 0 1 220px
+            margin-bottom: 0 !important
+            padding-top: 0
+
+        &:before
+            content: 'Possui um Cupom de Desconto? '
+
+        span
+            display: none
+
+    &__form
+        border: solid 1px var(--color-border)
+
+        .input-text
+            border: 0 !important
+            box-shadow: none !important
+
+    &__action
+        .btn
+            background: none
+            box-shadow: none
+            color: var(--primary)
+            text-transform: none
+            font-size: 14px

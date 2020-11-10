@@ -1529,6 +1529,17 @@ $j(document)
                 $('.header .search').addClass('search--show')
             })
         }
+
+        addSVG({
+            'z-trash': {
+                selector: '.cart-table .btn-remove',
+                mode: 'html',
+            },
+            'z-truck': {
+                selector: '.shipping > .title',
+                mode: 'prepend',
+            },
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
@@ -1541,4 +1552,14 @@ $j(document)
     .on('ajaxComplete', function (resp) {
         // Safe ajax completed
         // Dispara apÃ³s completar com sucesso qualquer requisiÃ§Ã£o Ajax, e trÃ¡s a resposta do Ajax.
+        addSVG({
+            'z-trash': {
+                selector: '.cart-table .btn-remove',
+                mode: 'html',
+            },
+            'z-truck': {
+                selector: '.shipping > .title',
+                mode: 'prepend',
+            },
+        })
     })
