@@ -1,0 +1,47 @@
+<div class="prod__img">
+    @fotos
+    @selos
+</div>
+<div class="prod__shop">	
+    <div class="col">
+		<div class="prod__name">
+			<h1>@nome</h1>
+			<small class="sku">@atributo(sku)</small>
+		</div>
+
+        <div class="prod__infos">
+            @if(dimensoes)
+            <p>Dimensões @atributo(dimensoes)</p>
+            @endif(dimensoes)
+            @if(tecnica)
+            <p>Técnica @atributo(tecnica)</p>
+            @endif(tecnica)
+            @if(data_obra)
+            <p>Data @atributo(data_obra)</p>
+            @endif(data_obra)
+        </div>
+
+        @if(is_disponivel)
+        <div class="prod__availabled">
+            Disponibilidade: Envio Imediato
+        </div>
+
+        @variacoes
+
+        <div class="prod__prices">
+			@preco
+			@preco(parcelado)	
+        </div>
+
+        <div class="prod__call-to-action">
+            @bt(comprar)
+            @links
+        </div>
+        @endif(is_disponivel)
+
+        @if(short_description)
+        <h3 class="prod__short-title">Descrição</h3>
+        <div class="prod__short-desc std">@descricao(curta)</div>
+        @endif(short_description)
+    </div>
+</div>

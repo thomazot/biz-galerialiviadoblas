@@ -814,37 +814,64 @@ function default_carrossel_produtos() {
                 })
             } else {
                 // se for em uma listagem normal
-                const hasGrid =
-                    $j(el)
-                        .closest('.products')
-                        .attr('id')
-                        .indexOf('products--grid') !== -1
+                const hasExistId = $j(el).closest('.products').attr('id')
 
-                const hasGridLeft =
-                    $j(el).closest('.products').attr('id').indexOf('-left') !==
-                    -1
+                if (hasExistId) {
+                    const hasGrid =
+                        $j(el)
+                            .closest('.products')
+                            .attr('id')
+                            .indexOf('products--grid') !== -1
 
-                if (hasGrid) {
-                    $j(el).closest('.products').addClass('products--grid')
-                    if (hasGridLeft)
-                        $j(el).closest('.products').addClass('products--left')
-                    else $j(el).closest('.products').addClass('products--right')
-                    $j(el).owlCarousel({
-                        navigation: true,
-                        navigationText: ['?', '?'],
-                        items: 5,
-                        itemsCustom: [
-                            [0, 1],
-                            [568, 2],
-                            [768, 3],
-                            [993, 5],
-                        ],
-                        beforeMove: function () {
-                            if (typeof $j.fn.lazyload != 'undefined') {
-                                $j(el).find('img').lazyload()
-                            }
-                        },
-                    })
+                    const hasGridLeft =
+                        $j(el)
+                            .closest('.products')
+                            .attr('id')
+                            .indexOf('-left') !== -1
+
+                    if (hasGrid) {
+                        $j(el).closest('.products').addClass('products--grid')
+                        if (hasGridLeft)
+                            $j(el)
+                                .closest('.products')
+                                .addClass('products--left')
+                        else
+                            $j(el)
+                                .closest('.products')
+                                .addClass('products--right')
+                        $j(el).owlCarousel({
+                            navigation: true,
+                            navigationText: ['?', '?'],
+                            items: 5,
+                            itemsCustom: [
+                                [0, 1],
+                                [568, 2],
+                                [768, 3],
+                                [993, 5],
+                            ],
+                            beforeMove: function () {
+                                if (typeof $j.fn.lazyload != 'undefined') {
+                                    $j(el).find('img').lazyload()
+                                }
+                            },
+                        })
+                    } else {
+                        $j(el).owlCarousel({
+                            navigation: true,
+                            navigationText: ['?', '?'],
+                            items: 3,
+                            itemsCustom: [
+                                [0, 1],
+                                [568, 2],
+                                [768, 3],
+                            ],
+                            beforeMove: function () {
+                                if (typeof $j.fn.lazyload != 'undefined') {
+                                    $j(el).find('img').lazyload()
+                                }
+                            },
+                        })
+                    }
                 } else {
                     $j(el).owlCarousel({
                         navigation: true,
@@ -1280,6 +1307,10 @@ $j.fn.neonTheme.custom = {
             selector: '.frete .frete__content .input-box label',
             mode: 'prepend',
             ratio: false,
+        },
+        'z-wish': {
+            selector: '.add-to-links .link-wishlist a',
+            mode: 'prepend',
         },
     },
 }
