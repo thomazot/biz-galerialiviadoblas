@@ -13,7 +13,15 @@
                     margin: 0 auto
 
     &-container
-        margin-top: 60px
+        --color-border: #eeeeee
+
+        &
+            margin-top: 60px
+            padding-top: 40px
+            border-top: solid 1px var(--color-border)
+
+        .cms-home &, .catalog-category-view &, .catalog-product-view &
+            border-top: 0
 
     &__row
         @media media-min-lg

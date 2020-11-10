@@ -4,8 +4,15 @@
     background-size: cover
     background-repeat: no-repeat
 
+    body:not(.cms-home) &
+        padding-top: 80px
+        padding-bottom: 40px
+
     .products
         padding-bottom: 80px
+
+        body:not(.cms-home) &
+            display: none
 
         &__title
             padding: 50px 0 30px
