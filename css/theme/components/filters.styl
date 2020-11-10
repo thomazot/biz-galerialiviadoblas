@@ -1,0 +1,60 @@
+.filters
+    &__swatches
+        .li--0
+            max-width: none
+
+    @media media-min-lg
+        margin-right: 0
+        margin-bottom: 50px
+        margin-left: 0
+        width: 100%
+
+        > .title
+            display: none
+
+        &__name
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            margin: 0
+            color: var(--primary)
+            font-weight: regular
+            font-size: 15px
+
+            &:after
+                margin-top: -2px
+                margin-left: 5px
+                content: url(select)
+
+        &__filter
+            padding: 10px 32px 30px 0
+            background: none
+            box-shadow: none
+
+            &:hover
+                box-shadow: none
+
+            .count
+                display: none
+
+            @media media-min-lg
+                .li--0
+                    margin-bottom: 0 !important
+
+                .a--0
+                    margin-right: -16px
+                    margin-left: -16px
+                    padding: 8px 16px
+                    width: auto
+
+                    &:hover
+                        background: var(--primary)
+                        color: var(--primary-contrast)
+
+                .filters__swatches
+                    .li--0
+                        flex: 1 0 auto
+                        min-width: 0
+
+                    .a--0
+                        margin: 0
