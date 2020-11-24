@@ -10,3 +10,125 @@
 
         .li--0:not(:last-child)
             margin-bottom: 16px
+
+    .header &
+        --background: #f0f3f3
+
+        &__close
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-left: auto
+            background: none
+            box-shadow: none
+            color: var(--primary)
+
+            span
+                display: none
+
+            &:before
+                icon('\f00d')
+
+                color: currentColor
+
+        &__show
+            display: flex
+            justify-content: center
+            align-items: center
+            background: none
+            box-shadow: none
+            color: var(--primary)
+            font-size: 20px
+
+            span
+                display: none
+
+            &:before
+                icon('\f0c9')
+
+                color: currentColor
+
+        @media media-max-lg
+            position: fixed
+            top: 0
+            left: 0
+            max-width: 100%
+            width: 320px
+            height: 100%
+            background: var(--background)
+            transition: all .2s ease-in-out
+            transform: translateX(-100%)
+
+            &--show
+                transform: translateX(0)
+
+        @media media-min-lg
+            align-self: stretch
+            min-height: 100%
+
+            &__show, &__close
+                display: none
+
+        .ul--0
+            @media media-min-lg
+                display: flex
+                justify-content: flex-start
+                height: 100%
+
+        .ul--1
+            position: absolute
+            min-width: 0
+            width: 100%
+            background: var(--background)
+
+            @media media-min-lg
+                shadowBorder()
+
+                visibility: hidden
+                padding: 30px 0
+                opacity: 0
+                transition: all .2s ease-in-out
+
+        .li--0
+            margin: 0
+
+            @media media-min-lg
+                &:hover
+                    .ul--1
+                        visibility: visible
+                        opacity: 1
+
+        .a--0
+            text-transform: uppercase
+            font-weight: medium
+            font-size: 12px
+
+            @media media-max-lg
+                font-size: 14px
+
+            @media media-min-lg
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 0 15px
+                height: 100%
+
+        .a--1, .a--2
+            display: inline-block
+            padding: 4px 0
+
+        .a--0, .a--1, .a--2
+            @media media-max-lg
+                display: block
+                padding: 4px 16px
+
+        .a--1
+            font-weight: bold
+            font-size: 18px
+
+            @media media-max-lg
+                font-size: 14px
+
+        .a--2
+            font-weight: regular
+            font-size: 14px
