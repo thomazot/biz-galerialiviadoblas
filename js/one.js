@@ -1404,20 +1404,6 @@ function scrollTop() {
     })
 }
 
-function categoriesTitle() {
-    const items = Array.from(
-        document.querySelectorAll('.header-container .categories .li--0')
-    )
-    items.forEach((item) => {
-        const title =
-            item.querySelector('.a--0') &&
-            item.querySelector('.a--0').textContent.trim()
-        const child = item.querySelector('.box--1')
-
-        child.setAttribute('data-title', title)
-    })
-}
-
 function getAllVariables() {
     return Array.from(document.styleSheets)
         .filter(
@@ -1486,6 +1472,32 @@ function createRootVariableRGB() {
     })
 }
 
+function menuTopo($) {
+    const menu = $('.header .mymenu')
+
+    if (menu.length) {
+        const buttonClose = $(
+            '<button type="button" class="mymenu__close"><span>Fechar</span></button>'
+        )
+        const buttonShow = $(
+            '<button type="button" class="mymenu__show"><span>Abrir</span></button>'
+        )
+
+        $('.header').prepend(buttonShow)
+        menu.prepend(buttonClose)
+
+        buttonClose.click(function (event) {
+            event.preventDefault()
+            menu.toggleClass('mymenu--show')
+        })
+
+        buttonShow.click(function (event) {
+            event.preventDefault()
+            menu.toggleClass('mymenu--show')
+        })
+    }
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
@@ -1494,8 +1506,9 @@ $j(document)
 
         // Scrolling
         scrollTop()
-        // Categories title
-        categoriesTitle()
+
+        // menu topo
+        menuTopo($)
 
         // Menu Categories
         $('.categories .parent').click(function (event) {
@@ -1503,6 +1516,13 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+
+        // banner Category
+        const bannerCategory = $('.category-image')
+
+        if (bannerCategory.length) {
+            $('.breadcrumb').after(bannerCategory)
+        }
 
         // Button close Search
 

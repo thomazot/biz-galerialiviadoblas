@@ -1,6 +1,14 @@
 .blogfeed
     container()
 
+    .ul--0
+        @media media-min-lg
+            justify-content: flex-start
+
+    .li--0
+        @media media-min-lg
+            max-width: 33.333%
+
     .title
         padding: 40px 0
         text-align: center
@@ -12,6 +20,9 @@
 
     &__thumb
         margin-right: 0
+
+        .imgcase
+            border-radius: 0
 
     &__postname.title
         margin-bottom: 0
